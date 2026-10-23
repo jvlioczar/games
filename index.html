@@ -1,45 +1,29 @@
 <!DOCTYPE html>
-
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<!-- Ícones principais --><!-- Apple (iOS) -->
-<link href="./images/icon_192.png" rel="apple-touch-icon"/>
-<!-- Preload opcional para o SVG se quiser -->
-<link as="image" href="./images/icon.svg" imagesizes="23px" rel="preload"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>BiblioVerse — A Biblioteca de Games — Catálogo pesquisável do essencial dos games por categoria</title>
+<meta content="Catálogo pesquisável do essencial dos games por categoria: lojas, consoles, jogos, gêneros, conceitos, esports, eventos, mídia e figuras-chave. O projeto é minimalista e ideal para colocar nos favoritos do seu navegador." name="description"/>
+<link href="https://games.biblioverse.org/" rel="canonical"/>
 <meta content="#0e1117" name="theme-color"/>
 <meta content="yes" name="mobile-web-app-capable"/>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
-<title>BiblioVerse — A Biblioteca de Games — Catálogo pesquisável do essencial dos games por categoria</title>
 <!-- App icons -->
 <link href="images/icon.svg" rel="icon" type="image/svg+xml"/>
 <link href="images/icon_192.png" rel="icon" sizes="192x192" type="image/png"/>
 <link href="images/icon_512.png" rel="icon" sizes="512x512" type="image/png"/>
 <link href="images/icon_192.png" rel="apple-touch-icon"/>
-<meta content="#0e1117" name="theme-color"/>
 <link href="manifest.webmanifest" rel="manifest"/>
-<meta content="Catálogo pesquisável do essencial dos games por categoria: lojas, consoles, jogos, gêneros, conceitos, esports, eventos, mídia e figuras-chave. O projeto é minimalista e ideal para colocar nos favoritos do seu navegador." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link as="style" href="https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400;700&amp;display=swap" onload="this.rel='stylesheet'" rel="preload"/><noscript><link href="https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400;700&amp;display=swap" rel="stylesheet"/></noscript>
 <link as="style" href="styles.css" onload="this.rel='stylesheet'" rel="preload"/><noscript><link href="styles.css" rel="stylesheet"/></noscript>
-<link href="./manifest.webmanifest" rel="manifest"/>
+<script src="https://biblioverse.org/superbar.js" defer></script>
 </head>
 <body>
-<!-- Super-bar: 8 equal tabs across the full width -->
-<nav aria-label="Bibliotecas" class="superbar">
-<div class="superbar-toggle"><span class="superbar-title i18n-superbar-title">BiblioVerse - A Biblioteca de Tudo</span> <span aria-hidden="true" class="icon-burger"><i></i><i></i><i></i></span><span aria-hidden="true" class="icon-close">✕</span></div>
-<ul class="superbar-list">
-<li class="superbar-item"><a data-key="design" href="https://design.biblioverse.org">Design</a></li>
-<li class="superbar-item active"><a data-key="games" href="https://games.biblioverse.org">Games</a></li>
-<li class="superbar-item"><a data-key="language" href="https://language.biblioverse.org">Idiomas</a></li>
-<li class="superbar-item"><a data-key="ai" href="https://ai.biblioverse.org">IA</a></li>
-<li class="superbar-item"><a data-key="music" href="https://music.biblioverse.org">Música</a></li>
-<li class="superbar-item"><a data-key="coding" href="https://code.biblioverse.org">Programação</a></li>
-<li class="superbar-item"><a data-key="social" href="https://social.biblioverse.org">Redes Sociais</a></li>
-</ul>
-</nav>
+<!-- BiblioVerse Superbar -->
+<nav id="bvbar" class="bvbar" data-current="games" aria-label="BiblioVerse" style="position:fixed;top:0;left:0;right:0;height:44px;z-index:9000;background:linear-gradient(90deg,#4f7cff,#7a5cff)"><a href="https://biblioverse.org" style="color:#fff;line-height:44px;padding:0 14px;font-weight:700;text-decoration:none;font-family:sans-serif">BiblioVerse</a></nav>
 <aside aria-label="Categorias" class="sidepush" id="sidepush"><div class="sidepush-top"><button aria-label="Expandir menu" class="side-toggle" id="menuToggle" title="Expandir menu" type="button">▶</button></div><nav class="sidepush-scroll" id="sideScroll"><ul class="sidepush-menu" id="sideMenu"></ul></nav></aside><div class="push-wrap" id="pushWrap"><header class="site-header">
 <div class="header-inner container">
 <div class="brand-wrap">
@@ -56,15 +40,9 @@
       BETA
     </span>
 </h1>
-<span class="byline">
-<span class="i18n-by">Idealizada por</span>
-<a class="bylink" href="https://instagram.com/jvlioczar" rel="noopener noreferrer" target="_blank">Julio Cesar Prava</a>
-<span class="i18n-and"></span>
-<a class="bylink" href="" rel="noopener noreferrer" target="_blank"></a>
-</span>
 </div>
 <div class="controls">
-<input autofocus="" class="mono" id="search" placeholder="Buscar por nome" type="search"/>
+<input class="mono" id="search" placeholder="Buscar por nome" type="search"/>
 <select class="mono" id="categoryFilter" title="Filtrar por categoria"></select>
 <div class="control-group">
 <button aria-label="Alternar tema" class="toggle" id="themeToggle" type="button">☀️</button>
@@ -84,7 +62,7 @@
       <span id="count">0</span>
 <span class="i18n-items">itens</span>
 <span class="sep">|</span>
-<span class="i18n-lastupdate">Última atualização: Setembro/2026</span>
+<span class="i18n-lastupdate">Última atualização: Outubro/2026</span>
 </div>
 <p class="footer-lead">
 <span class="i18n-footer-lead-pre">O projeto</span>
@@ -94,7 +72,7 @@
 <p class="footer-note i18n-bookmarkShare">Salve esse projeto nos seus favoritos e compartilhe!</p>
 <p class="footer-nav"><span class="i18n-footernav">Acesse as bibliotecas de outros temas úteis no <strong class="bverse-strong">BiblioVerse</strong>.</span></p>
 <div class="footer-actions">
-<a class="btn linkedin mono" href="https://linkedin.com/in/juliocesarprava/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<a class="btn linkedin mono" href="https://www.linkedin.com/company/biblioverse.org" rel="noopener noreferrer" target="_blank">LinkedIn</a>
 <button aria-label="Favoritar" class="btn star mono" id="favBtn" type="button">⭐</button>
 <button class="btn share mono" id="shareBtn" type="button"><span class="i18n-share">Compartilhar</span></button>
 <a class="btn bverse mono" href="https://biblioverse.org" rel="noopener noreferrer" target="_blank">BiblioVerse</a>
@@ -929,7 +907,7 @@
   {
     "category": "Consoles de mesa",
     "name": "Nintendo Switch",
-    "url": "https://en.wikipedia.org/wiki/Nintendo_Switch",
+    "url": "https://www.nintendo.com/us/gaming-systems/switch/",
     "description": "",
     "tags": [],
     "featured": true
@@ -937,7 +915,7 @@
   {
     "category": "Consoles de mesa",
     "name": "Nintendo Switch 2",
-    "url": "https://en.wikipedia.org/wiki/Nintendo_Switch_2",
+    "url": "https://www.nintendo.com/us/gaming-systems/switch-2/",
     "description": "",
     "tags": [],
     "featured": true
@@ -984,7 +962,7 @@
   {
     "category": "Consoles de mesa",
     "name": "PlayStation 5",
-    "url": "https://en.wikipedia.org/wiki/PlayStation_5",
+    "url": "https://www.playstation.com/ps5/",
     "description": "",
     "tags": [],
     "featured": true
@@ -1048,7 +1026,7 @@
   {
     "category": "Consoles de mesa",
     "name": "Xbox Series X/S",
-    "url": "https://en.wikipedia.org/wiki/Xbox_Series_X_and_Series_S",
+    "url": "https://www.xbox.com/consoles",
     "description": "",
     "tags": [],
     "featured": true
@@ -1128,7 +1106,7 @@
   {
     "category": "Desenvolvimento de jogos",
     "name": "Global Game Jam",
-    "url": "http://www.globalgamejam.org",
+    "url": "https://www.globalgamejam.org",
     "description": "",
     "tags": [],
     "featured": true
@@ -1158,7 +1136,7 @@
   {
     "category": "Desenvolvimento de jogos",
     "name": "Mixamo",
-    "url": "http://www.mixamo.com/",
+    "url": "https://www.mixamo.com/",
     "description": "",
     "tags": []
   },
@@ -1265,7 +1243,7 @@
   {
     "category": "Empresas brasileiras de games",
     "name": "Tectoy",
-    "url": "http://www.tectoy.com.br/",
+    "url": "https://www.tectoy.com.br/",
     "description": "",
     "tags": [],
     "featured": true
@@ -1302,7 +1280,7 @@
   {
     "category": "Empresas e publishers",
     "name": "Atlus",
-    "url": "http://www.atlus.co.jp/",
+    "url": "https://www.atlus.co.jp/",
     "description": "",
     "tags": []
   },
@@ -1351,7 +1329,7 @@
   {
     "category": "Empresas e publishers",
     "name": "Devolver Digital",
-    "url": "http://www.devolverdigital.com",
+    "url": "https://www.devolverdigital.com",
     "description": "",
     "tags": []
   },
@@ -1415,7 +1393,7 @@
   {
     "category": "Empresas e publishers",
     "name": "Kojima Productions",
-    "url": "http://www.kojimaproductions.jp/",
+    "url": "https://www.kojimaproductions.jp/",
     "description": "",
     "tags": []
   },
@@ -1524,7 +1502,7 @@
   {
     "category": "Empresas e publishers",
     "name": "Roblox Corporation",
-    "url": "https://corp.roblox.com/",
+    "url": "https://about.roblox.com/",
     "description": "",
     "tags": []
   },
@@ -1576,7 +1554,7 @@
   {
     "category": "Empresas e publishers",
     "name": "Take-Two Interactive",
-    "url": "http://www.take2games.com",
+    "url": "https://www.take2games.com",
     "description": "",
     "tags": []
   },
@@ -1651,7 +1629,7 @@
   {
     "category": "Esports: torneios e ligas",
     "name": "CBLOL",
-    "url": "http://br.lolesports.com/",
+    "url": "https://br.lolesports.com/",
     "description": "",
     "tags": [],
     "featured": true
@@ -1659,7 +1637,7 @@
   {
     "category": "Esports: torneios e ligas",
     "name": "Counter-Strike Major",
-    "url": "https://en.wikipedia.org/wiki/Counter-Strike_Major_Championships",
+    "url": "https://www.counter-strike.net/majors",
     "description": "",
     "tags": [],
     "featured": true
@@ -1674,7 +1652,7 @@
   {
     "category": "Esports: torneios e ligas",
     "name": "ESL",
-    "url": "http://www.esl.eu/",
+    "url": "https://www.esl.eu/",
     "description": "",
     "tags": []
   },
@@ -1718,7 +1696,7 @@
   {
     "category": "Esports: torneios e ligas",
     "name": "Overwatch Champions Series",
-    "url": "https://en.wikipedia.org/wiki/Overwatch_Champions_Series",
+    "url": "https://overwatch.blizzard.com/esports/",
     "description": "",
     "tags": []
   },
@@ -1747,7 +1725,7 @@
   {
     "category": "Esports: torneios e ligas",
     "name": "The International (Dota 2)",
-    "url": "http://www.dota2.com/international/",
+    "url": "https://www.dota2.com/international/",
     "description": "",
     "tags": []
   },
@@ -1769,9 +1747,10 @@
   {
     "category": "Eventos e feiras",
     "name": "BIG Festival",
-    "url": "https://bigfestival.com.br/",
+    "url": "https://web.archive.org/web/2023/https://bigfestival.com.br/",
     "description": "",
-    "tags": []
+    "tags": [],
+    "ended": true
   },
   {
     "category": "Eventos e feiras",
@@ -1791,7 +1770,7 @@
   {
     "category": "Eventos e feiras",
     "name": "ChinaJoy",
-    "url": "http://en.chinajoy.net/",
+    "url": "https://en.chinajoy.net/",
     "description": "",
     "tags": []
   },
@@ -1835,7 +1814,7 @@
   {
     "category": "Eventos e feiras",
     "name": "IndieCade",
-    "url": "http://www.indiecade.com/",
+    "url": "https://www.indiecade.com/",
     "description": "",
     "tags": []
   },
@@ -1856,7 +1835,7 @@
   {
     "category": "Eventos e feiras",
     "name": "QuakeCon",
-    "url": "http://www.quakecon.org",
+    "url": "https://quakecon.bethesda.net/",
     "description": "",
     "tags": []
   },
@@ -2760,7 +2739,7 @@
   {
     "category": "Jogos brasileiros",
     "name": "Horizon Chase Turbo",
-    "url": "https://en.wikipedia.org/wiki/Horizon_Chase",
+    "url": "https://www.horizonchase.com/",
     "description": "",
     "tags": [],
     "featured": true
@@ -2825,35 +2804,35 @@
   {
     "category": "Jogos icônicos",
     "name": "Age of Empires II",
-    "url": "https://en.wikipedia.org/wiki/Age_of_Empires_II",
+    "url": "https://www.ageofempires.com/games/aoeiide/",
     "description": "",
     "tags": []
   },
   {
     "category": "Jogos icônicos",
     "name": "Among Us",
-    "url": "https://en.wikipedia.org/wiki/Among_Us",
+    "url": "https://www.innersloth.com/games/among-us/",
     "description": "",
     "tags": []
   },
   {
     "category": "Jogos icônicos",
     "name": "Angry Birds",
-    "url": "https://en.wikipedia.org/wiki/Angry_Birds_(video_game)",
+    "url": "https://www.angrybirds.com/",
     "description": "",
     "tags": []
   },
   {
     "category": "Jogos icônicos",
     "name": "Animal Crossing: New Horizons",
-    "url": "https://en.wikipedia.org/wiki/Animal_Crossing:_New_Horizons",
+    "url": "https://animal-crossing.com/new-horizons/",
     "description": "",
     "tags": []
   },
   {
     "category": "Jogos icônicos",
     "name": "Baldur's Gate 3",
-    "url": "https://en.wikipedia.org/wiki/Baldur's_Gate_3",
+    "url": "https://baldursgate3.game/",
     "description": "",
     "tags": []
   },
@@ -2881,14 +2860,14 @@
   {
     "category": "Jogos icônicos",
     "name": "Candy Crush Saga",
-    "url": "https://en.wikipedia.org/wiki/Candy_Crush_Saga",
+    "url": "https://www.king.com/game/candycrush",
     "description": "",
     "tags": []
   },
   {
     "category": "Jogos icônicos",
     "name": "Celeste",
-    "url": "https://en.wikipedia.org/wiki/Celeste_(video_game)",
+    "url": "https://www.celestegame.com/",
     "description": "",
     "tags": []
   },
@@ -2902,14 +2881,14 @@
   {
     "category": "Jogos icônicos",
     "name": "Civilization",
-    "url": "https://en.wikipedia.org/wiki/Civilization_(video_game)",
+    "url": "https://civilization.2k.com/",
     "description": "",
     "tags": []
   },
   {
     "category": "Jogos icônicos",
     "name": "Clash of Clans",
-    "url": "https://en.wikipedia.org/wiki/Clash_of_Clans",
+    "url": "https://supercell.com/en/games/clashofclans/",
     "description": "",
     "tags": []
   },
@@ -2924,7 +2903,7 @@
   {
     "category": "Jogos icônicos",
     "name": "Counter-Strike",
-    "url": "https://en.wikipedia.org/wiki/Counter-Strike_(video_game)",
+    "url": "https://www.counter-strike.net/",
     "description": "",
     "tags": []
   },
@@ -2960,14 +2939,14 @@
   {
     "category": "Jogos icônicos",
     "name": "Dota 2",
-    "url": "https://en.wikipedia.org/wiki/Dota_2",
+    "url": "https://www.dota2.com/",
     "description": "",
     "tags": []
   },
   {
     "category": "Jogos icônicos",
     "name": "Elden Ring",
-    "url": "https://en.wikipedia.org/wiki/Elden_Ring",
+    "url": "https://en.bandainamcoent.eu/elden-ring",
     "description": "",
     "tags": [],
     "featured": true
@@ -2982,14 +2961,14 @@
   {
     "category": "Jogos icônicos",
     "name": "Fortnite",
-    "url": "https://en.wikipedia.org/wiki/Fortnite",
+    "url": "https://www.fortnite.com/",
     "description": "",
     "tags": []
   },
   {
     "category": "Jogos icônicos",
     "name": "Free Fire",
-    "url": "https://en.wikipedia.org/wiki/Free_Fire_(video_game)",
+    "url": "https://ff.garena.com/",
     "description": "",
     "tags": [],
     "featured": true
@@ -2997,7 +2976,7 @@
   {
     "category": "Jogos icônicos",
     "name": "Genshin Impact",
-    "url": "https://en.wikipedia.org/wiki/Genshin_Impact",
+    "url": "https://genshin.hoyoverse.com/",
     "description": "",
     "tags": []
   },
@@ -3011,7 +2990,7 @@
   {
     "category": "Jogos icônicos",
     "name": "Grand Theft Auto V",
-    "url": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_V",
+    "url": "https://www.rockstargames.com/gta-v",
     "description": "",
     "tags": [],
     "featured": true
@@ -3026,14 +3005,14 @@
   {
     "category": "Jogos icônicos",
     "name": "Habbo Hotel",
-    "url": "https://en.wikipedia.org/wiki/Habbo",
+    "url": "https://www.habbo.com/",
     "description": "",
     "tags": []
   },
   {
     "category": "Jogos icônicos",
     "name": "Hades",
-    "url": "https://en.wikipedia.org/wiki/Hades_(video_game)",
+    "url": "https://www.supergiantgames.com/games/hades/",
     "description": "",
     "tags": []
   },
@@ -3061,7 +3040,7 @@
   {
     "category": "Jogos icônicos",
     "name": "Hollow Knight",
-    "url": "https://en.wikipedia.org/wiki/Hollow_Knight",
+    "url": "https://www.hollowknight.com/",
     "description": "",
     "tags": []
   },
@@ -3075,7 +3054,7 @@
   {
     "category": "Jogos icônicos",
     "name": "League of Legends",
-    "url": "https://en.wikipedia.org/wiki/League_of_Legends",
+    "url": "https://www.leagueoflegends.com/",
     "description": "",
     "tags": [],
     "featured": true
@@ -3104,7 +3083,7 @@
   {
     "category": "Jogos icônicos",
     "name": "Minecraft",
-    "url": "https://en.wikipedia.org/wiki/Minecraft",
+    "url": "https://www.minecraft.net/",
     "description": "",
     "tags": [],
     "featured": true
@@ -3127,14 +3106,14 @@
   {
     "category": "Jogos icônicos",
     "name": "Outer Wilds",
-    "url": "https://en.wikipedia.org/wiki/Outer_Wilds",
+    "url": "https://www.mobiusdigitalgames.com/outer-wilds.html",
     "description": "",
     "tags": []
   },
   {
     "category": "Jogos icônicos",
     "name": "Overwatch",
-    "url": "https://en.wikipedia.org/wiki/Overwatch_(video_game)",
+    "url": "https://overwatch.blizzard.com/",
     "description": "",
     "tags": []
   },
@@ -3149,7 +3128,7 @@
   {
     "category": "Jogos icônicos",
     "name": "Pokémon Go",
-    "url": "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Go",
+    "url": "https://pokemongolive.com/",
     "description": "",
     "tags": []
   },
@@ -3177,14 +3156,14 @@
   {
     "category": "Jogos icônicos",
     "name": "PUBG: Battlegrounds",
-    "url": "https://en.wikipedia.org/wiki/PUBG:_Battlegrounds",
+    "url": "https://pubg.com/",
     "description": "",
     "tags": []
   },
   {
     "category": "Jogos icônicos",
     "name": "Red Dead Redemption 2",
-    "url": "https://en.wikipedia.org/wiki/Red_Dead_Redemption_2",
+    "url": "https://www.rockstargames.com/reddeadredemption2",
     "description": "",
     "tags": []
   },
@@ -3205,7 +3184,7 @@
   {
     "category": "Jogos icônicos",
     "name": "Roblox",
-    "url": "https://en.wikipedia.org/wiki/Roblox",
+    "url": "https://www.roblox.com/",
     "description": "",
     "tags": []
   },
@@ -3261,7 +3240,7 @@
   {
     "category": "Jogos icônicos",
     "name": "Stardew Valley",
-    "url": "https://en.wikipedia.org/wiki/Stardew_Valley",
+    "url": "https://www.stardewvalley.net/",
     "description": "",
     "tags": []
   },
@@ -3291,21 +3270,21 @@
   {
     "category": "Jogos icônicos",
     "name": "Super Smash Bros. Ultimate",
-    "url": "https://en.wikipedia.org/wiki/Super_Smash_Bros._Ultimate",
+    "url": "https://www.smashbros.com/",
     "description": "",
     "tags": []
   },
   {
     "category": "Jogos icônicos",
     "name": "Terraria",
-    "url": "https://en.wikipedia.org/wiki/Terraria",
+    "url": "https://terraria.org/",
     "description": "",
     "tags": []
   },
   {
     "category": "Jogos icônicos",
     "name": "Tetris",
-    "url": "https://en.wikipedia.org/wiki/Tetris",
+    "url": "https://tetris.com/",
     "description": "",
     "tags": [],
     "featured": true
@@ -3334,21 +3313,21 @@
   {
     "category": "Jogos icônicos",
     "name": "The Witcher 3",
-    "url": "https://en.wikipedia.org/wiki/The_Witcher_3:_Wild_Hunt",
+    "url": "https://www.thewitcher.com/en/witcher3",
     "description": "",
     "tags": []
   },
   {
     "category": "Jogos icônicos",
     "name": "Undertale",
-    "url": "https://en.wikipedia.org/wiki/Undertale",
+    "url": "https://undertale.com/",
     "description": "",
     "tags": []
   },
   {
     "category": "Jogos icônicos",
     "name": "Valorant",
-    "url": "https://en.wikipedia.org/wiki/Valorant",
+    "url": "https://playvalorant.com/",
     "description": "",
     "tags": [],
     "featured": true
@@ -3363,7 +3342,7 @@
   {
     "category": "Jogos icônicos",
     "name": "World of Warcraft",
-    "url": "https://en.wikipedia.org/wiki/World_of_Warcraft",
+    "url": "https://worldofwarcraft.blizzard.com/",
     "description": "",
     "tags": []
   },
@@ -3437,7 +3416,7 @@
   {
     "category": "Lojas e plataformas digitais",
     "name": "Green Man Gaming",
-    "url": "http://www.greenmangaming.com",
+    "url": "https://www.greenmangaming.com",
     "description": "",
     "tags": []
   },
@@ -3495,14 +3474,15 @@
   {
     "category": "Lojas e plataformas digitais",
     "name": "Prime Gaming",
-    "url": "https://gaming.amazon.com/",
+    "url": "https://en.wikipedia.org/wiki/Prime_Gaming",
     "description": "",
-    "tags": []
+    "tags": [],
+    "ended": true
   },
   {
     "category": "Lojas e plataformas digitais",
     "name": "Rockstar Games Launcher",
-    "url": "https://socialclub.rockstargames.com/rockstar-games-launcher",
+    "url": "https://www.rockstargames.com/downloads",
     "description": "",
     "tags": []
   },
@@ -3582,7 +3562,7 @@
   {
     "category": "Mods e emulação",
     "name": "Mod DB",
-    "url": "http://www.moddb.com/",
+    "url": "https://www.moddb.com/",
     "description": "",
     "tags": []
   },
@@ -3664,7 +3644,7 @@
   {
     "category": "Motores de jogo",
     "name": "Bevy",
-    "url": "https://bevyengine.org/",
+    "url": "https://bevy.org/",
     "description": "",
     "tags": []
   },
@@ -3706,7 +3686,7 @@
   {
     "category": "Motores de jogo",
     "name": "Frostbite",
-    "url": "http://www.frostbite.com/",
+    "url": "https://www.ea.com/frostbite",
     "description": "",
     "tags": []
   },
@@ -3798,7 +3778,7 @@
   {
     "category": "Motores de jogo",
     "name": "Twine",
-    "url": "http://twinery.org",
+    "url": "https://twinery.org",
     "description": "",
     "tags": []
   },
@@ -3849,7 +3829,7 @@
   {
     "category": "Museus e preservação",
     "name": "National Videogame Museum",
-    "url": "http://nvmusa.org",
+    "url": "https://nvmusa.org",
     "description": "",
     "tags": []
   },
@@ -4074,7 +4054,7 @@
   {
     "category": "Mídia e sites",
     "name": "Voxel (TecMundo)",
-    "url": "https://www.tecmundo.com.br/voxel",
+    "url": "https://www.estadao.com.br/tecmundo/voxel/",
     "description": "",
     "tags": []
   },
@@ -4117,7 +4097,7 @@
   {
     "category": "Periféricos e realidade virtual",
     "name": "Controle Xbox",
-    "url": "https://en.wikipedia.org/wiki/Xbox_Wireless_Controller",
+    "url": "https://www.xbox.com/accessories/controllers/xbox-wireless-controller",
     "description": "",
     "tags": []
   },
@@ -4131,7 +4111,7 @@
   {
     "category": "Periféricos e realidade virtual",
     "name": "DualSense",
-    "url": "https://en.wikipedia.org/wiki/DualSense",
+    "url": "https://www.playstation.com/accessories/dualsense-wireless-controller/",
     "description": "",
     "tags": []
   },
@@ -4256,7 +4236,7 @@
   {
     "category": "Periféricos e realidade virtual",
     "name": "Valve Index",
-    "url": "https://www.valvesoftware.com/index",
+    "url": "https://store.steampowered.com/hardware/valveindex",
     "description": "",
     "tags": []
   },
@@ -4549,7 +4529,7 @@
   {
     "category": "Portáteis",
     "name": "Analogue Pocket",
-    "url": "https://en.wikipedia.org/wiki/Analogue_Pocket",
+    "url": "https://www.analogue.co/pocket",
     "description": "",
     "tags": []
   },
@@ -4605,7 +4585,7 @@
   {
     "category": "Portáteis",
     "name": "Legion Go",
-    "url": "https://en.wikipedia.org/wiki/Legion_Go",
+    "url": "https://www.lenovo.com/us/en/legion-go/",
     "description": "",
     "tags": []
   },
@@ -4644,14 +4624,14 @@
   {
     "category": "Portáteis",
     "name": "Nintendo Switch Lite",
-    "url": "https://en.wikipedia.org/wiki/Nintendo_Switch_Lite",
+    "url": "https://www.nintendo.com/us/gaming-systems/switch/lite/",
     "description": "",
     "tags": []
   },
   {
     "category": "Portáteis",
     "name": "Playdate",
-    "url": "https://en.wikipedia.org/wiki/Playdate_(console)",
+    "url": "https://play.date/",
     "description": "",
     "tags": []
   },
@@ -4666,7 +4646,7 @@
   {
     "category": "Portáteis",
     "name": "PlayStation Portal",
-    "url": "https://en.wikipedia.org/wiki/PlayStation_Portal",
+    "url": "https://www.playstation.com/accessories/playstation-portal-remote-player/",
     "description": "",
     "tags": []
   },
@@ -4688,7 +4668,7 @@
   {
     "category": "Portáteis",
     "name": "Steam Deck",
-    "url": "https://en.wikipedia.org/wiki/Steam_Deck",
+    "url": "https://store.steampowered.com/steamdeck",
     "description": "",
     "tags": [],
     "featured": true
@@ -4710,6 +4690,13 @@
     "ended": true
   },
   {
+    "category": "Portáteis",
+    "name": "ROG Xbox Ally",
+    "url": "https://www.xbox.com/handhelds/rog-xbox-ally",
+    "description": "",
+    "tags": []
+  },
+  {
     "category": "Premiações",
     "name": "BAFTA Games Awards",
     "url": "https://www.bafta.org/games",
@@ -4727,7 +4714,7 @@
   {
     "category": "Premiações",
     "name": "Game Developers Choice Awards",
-    "url": "http://www.gamechoiceawards.com/",
+    "url": "https://www.gamechoiceawards.com/",
     "description": "",
     "tags": []
   },
@@ -4741,7 +4728,7 @@
   {
     "category": "Premiações",
     "name": "Independent Games Festival",
-    "url": "http://www.igf.com/",
+    "url": "https://www.igf.com/",
     "description": "",
     "tags": []
   },
@@ -4922,7 +4909,7 @@
   {
     "category": "Times de esports",
     "name": "Evil Geniuses",
-    "url": "http://www.evilgeniuses.gg/",
+    "url": "https://www.evilgeniuses.gg/",
     "description": "",
     "tags": []
   },
@@ -4987,7 +4974,7 @@
   {
     "category": "Times de esports",
     "name": "Hanwha Life Esports",
-    "url": "http://hle.kr",
+    "url": "https://hle.kr",
     "description": "",
     "tags": []
   },
@@ -5073,14 +5060,14 @@
   {
     "category": "Times de esports",
     "name": "NRG",
-    "url": "http://nrg.gg",
+    "url": "https://nrg.gg",
     "description": "",
     "tags": []
   },
   {
     "category": "Times de esports",
     "name": "OG",
-    "url": "http://ogs.gg",
+    "url": "https://ogs.gg",
     "description": "",
     "tags": []
   },
@@ -5094,7 +5081,7 @@
   {
     "category": "Times de esports",
     "name": "paiN Gaming",
-    "url": "https://soupain.com.br/",
+    "url": "https://www.pain.gg/",
     "description": "",
     "tags": [],
     "featured": true
@@ -5130,7 +5117,7 @@
   {
     "category": "Times de esports",
     "name": "SK Gaming",
-    "url": "http://www.sk-gaming.com",
+    "url": "https://www.sk-gaming.com",
     "description": "",
     "tags": []
   },
